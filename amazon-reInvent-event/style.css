@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    color: #1a1a1a;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Glass card styles */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 105, 0, 0.2);
+    padding: 3rem;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.event-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.event-logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FF6900;
+    margin-bottom: 0.5rem;
+}
+
+.event-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.event-subtitle {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+}
+
+/* Event Details */
+.event-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 105, 0, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 105, 0, 0.1);
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1a1a1a;
+}
+
+.detail-icon {
+    font-size: 1.3rem;
+}
+
+.detail-text {
+    font-weight: 500;
+}
+
+/* Event Description */
+.event-description {
+    margin-bottom: 3rem;
+}
+
+.event-description h2 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.event-description p {
+    color: #4a4a4a;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.highlight-tag {
+    padding: 0.6rem 1.2rem;
+    background: rgba(255, 105, 0, 0.1);
+    border-radius: 50px;
+    color: #FF6900;
+    border: 1px solid rgba(255, 105, 0, 0.2);
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.highlight-tag:hover {
+    background: rgba(255, 105, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Form Styles */
+.registration-form {
+    margin-top: 2rem;
+}
+
+.form-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(255, 105, 0, 0.2);
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    flex: 1 1 250px;
+    min-width: 0;
+}
+
+.form-group.full-width {
+    flex: 1 1 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+.required {
+    color: #FF6900;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #1a1a1a;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #FF6900;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 0 3px rgba(255, 105, 0, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Checkbox and Radio Styles */
+.checkbox-group,
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkbox-item,
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.checkbox-item:hover,
+.radio-item:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 105, 0, 0.3);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #FF6900;
+}
+
+.checkbox-item label,
+.radio-item label {
+    margin: 0;
+    cursor: pointer;
+    flex: 1;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 1.2rem 2.5rem;
+    background: #FF6900;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background: #F54A00;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(255, 105, 0, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+
+
+/* Footer note */
+.form-note {
+    text-align: center;
+    color: #6a6a6a;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
