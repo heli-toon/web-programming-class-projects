@@ -1,0 +1,43 @@
+/* Body styles to center the container on the page */
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* A gray shade */
+}
+
+/* Styles for the main container */
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    border: 2px solid #333;
+}
+
+/* Shared styles for all square elements */
+.square {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10px; /* Separation between squares */
+    color: white; /* All text color is set to white (in individual classes) */
+}
+
+/* Individual colors for each square*/
+.square-1 {
+    background-color: red;
+}
+.square-2 {
+    background-color: green;
+}
+.square-3 {
+    background-color: blue;
+}
