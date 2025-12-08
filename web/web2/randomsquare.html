@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Squares</title>
+    <style>
+        .container {
+            display: flex;
+            height: 100vh;
+            justify-content: center; 
+            align-items: center;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            color: white; 
+        }
+
+        #square1 {
+            background-color: red;
+        }
+
+        #square1:hover {
+            background-color: darkred;
+        }
+
+        #square2 {
+            background-color: green;
+        }
+
+        #square2:hover {
+            background-color: darkgreen;
+        }
+
+        #square3 {
+            background-color: blue;
+        }
+
+        #square3:hover {
+            background-color: darkblue;
+        }
+        
+        #status-display {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="status-display">
+        <p id="number-of-tries"></p> 
+    </div>
+    
+    <div class="container">
+        <div id="square1" class="square" onclick="squareClick(1)">1</div>
+        <div id="square2" class="square" onclick="squareClick(2)">2</div>
+        <div id="square3" class="square" onclick="squareClick(3)">3</div>
+    </div>
+
+    <script>
+        var n = 0; 
+
+        function squareClick(number) {
+            n++;
+            document.getElementById("number-of-tries").innerHTML = "This is how many times you have tried: " + n;
+
+            let randomNumber = Math.floor(Math.random() * 3) + 1;
+            
+            let message = "";
+
+            if (number === randomNumber) {
+                message = "You won! Hooray!";
+            } else {
+                message = "You lost. Try again.";
+            }
+
+            alert(message);
+        }
+    </script>
+</body>
+</html>
