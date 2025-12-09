@@ -30,19 +30,19 @@ h1 {
     margin-bottom: 20px;
 }
 
-#taskInput { /* [00:23:01] */
-    flex: 1; /* [00:23:11] */
-    padding: 10px; /* [00:23:11] */
-    font-size: 1em; /* [00:23:20] */
-    border: 1px solid #ccc; /* [00:23:20] */
-    border-radius: 5px; /* [00:23:29] */
+#taskInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 button {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50; /* Add button color */
+    background-color: #4CAF50;
     color: white;
     cursor: pointer;
 }

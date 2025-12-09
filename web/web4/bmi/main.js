@@ -1,28 +1,25 @@
-const products = [
-    { id: 1, name: "T-shirt", price: 25.00, image: "images/image1.jpeg" },
-    { id: 2, name: "Mug", price: 15.00, image: "images/image2.jpeg" },
-    { id: 3, name: "Notebook", price: 10.00, image: "images/image3.jpeg" }
-];
+function calculateBMI() {
+    const weight = parseFloat(document.getElementById("weight").value);
+    const height = parseFloat(document.getElementById("height").value) / 100;
+    const resultElement = document.getElementById("result");
 
-const cart = [];
+    if (isNaN(weight) || isNaN(height) || height <= 0 || weight <= 0) {
+        resultElement.innerHTML = "Please enter a valid height or weight value.";
+        return;
+    }
 
-function renderProducts() {
-    const productsContainer = document.getElementById("products"); 
+    const bmi = (weight / (height * height)).toFixed(2);
+    let classification = "";
 
-    productsContainer.innerHTML = "";
+    if (bmi < 18.5) {
+        classification = "Underweight";
+    } else if (bmi < 24.9) {
+        classification = "Normal weight";
+    } else if (bmi < 29.9) {
+        classification = "Overweight";
+    } else {
+        classification = "Obese";
+    }
 
-    products.forEach(product => {
-        const productCardHTML = `
-            <div class="product-card">
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>Price: GHS ${product.price.toFixed(2)}</p>
-                <button onclick="addToCart(${product.id})">Add to Cart</button>
-            </div>
-        `;
-        
-        productsContainer.innerHTML += productCardHTML;
-    });
+    resultElement.innerHTML = `Your BMI is ${bmi} (${classification})`;
 }
-
-renderProducts();
